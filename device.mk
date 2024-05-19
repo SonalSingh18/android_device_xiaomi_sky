@@ -217,6 +217,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
 
+# GCamGOPrebuilt
+PRODUCT_PACKAGES += \
+    GCamGOPrebuilt-V3_8
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor \
@@ -393,6 +397,12 @@ include $(DEVICE_PATH)/configs/properties/default.mk
 # QTI
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.systemhelper@1.0.vendor
+
+# RemovePackages
+ifeq ($(WITH_GMS),true)
+PRODUCT_PACKAGES += \
+    RemovePackages
+endif
 
 # RenderScript
 PRODUCT_PACKAGES += \
